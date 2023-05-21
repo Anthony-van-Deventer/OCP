@@ -121,4 +121,36 @@ but if we didnt assign returnValue to the value of the switch expression then yo
 
     }
 
+    //components of for loop are each optional
+    void thisIsAValidForLoop(){
+        int x =0;
+        //loop variable needs to be defined before using it
+        for(;x<2;x++){
+
+        }
+        for(;;){
+
+        }
+        z
+
+        for (int y=2,z =4;;){}
+
+    }
+
+    void labelsAreWeird(){
+        int[][] myComplexArray = {{5,2,1,3},{3,9,8,9},{5,7,12,7}};
+        //labels are optional pointers to the head of the loop that allow the application flow to break from it or jump to it
+        OUTER_LOOP: for(int[] mySimpleArray : myComplexArray) {
+            INNER_LOOP: for(int i=0; i<mySimpleArray.length; i++) {
+                System.out.print(mySimpleArray[i]+"\t");
+                for (int[] something : myComplexArray){
+                    continue INNER_LOOP;
+                }
+                break OUTER_LOOP;
+            }
+            continue INNER_LOOP;
+            System.out.println();
+        }
+    }
+
 }
